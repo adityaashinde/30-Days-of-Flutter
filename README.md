@@ -2,7 +2,8 @@
 
 Day 01 :
 Flutter Installation and Setup
-First App
+First App : 
+![hello-app](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/84e66e8c-aeb5-4893-a2cc-7ad774b162da)
 
 Day 02 :
 Git, Dart Data types and Scaffold
@@ -24,9 +25,7 @@ Q/A #30DaysOfFlutter
 
 Day 8 : Form | Text Field Validation | Ink
 
-<!-- ![day8.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cb8e679a-57d1-4f54-aba0-32ede6037043/7177fac6-4b7f-4b3b-a256-00629c12c95a/day8.png) -->
-
-![output](day8.png)
+![day8](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/fd68f822-97e1-4e4a-b7b0-a4b79bfa024f)
 
 Day 9 : Material Drawer | DevTools | ListView
 
@@ -101,8 +100,6 @@ class MyDrawer extends StatelessWidget {
 }
 ```
 
-![day9.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cb8e679a-57d1-4f54-aba0-32ede6037043/0c160ed8-4e19-4271-a4bf-7f723382f224/day9.png)
-
 added Circle Avatar in Drawer file.
 
 ```dart
@@ -112,7 +109,7 @@ currentAccountPicture: CircleAvatar(
                 ),
 ```
 
-![Alt text](day9.png)
+![day9](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/ddc1af4a-3b83-4eed-ac04-94e857e87a59)
 
 Day 10 : App Bar Theme | Extracting Theme | Models
 
@@ -156,9 +153,9 @@ and also debug show checked mode banner value made it false it.
 debugShowCheckedModeBanner = false;
 ```
 
-![Alt text](<day10(1).png>)
+![day10(1)](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/577754a9-9b2c-4b37-91e4-e121499045cb)
 
-![Alt text](<day10(2).png>)
+![day10(2)](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/7b30fa86-f940-481b-815f-712118091dcd)
 
 Day 11 : Build Context, 3 Trees & Constraints Explained
 
@@ -168,7 +165,7 @@ Flutter maintains three trees in parallel :
 
 the **Widget , Element and Render Object trees**
 
-![Alt text](day11.png)
+<img width="828" alt="day11" src="https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/b45ddcbf-a23b-4c8a-9782-53a71e92d5cd">
 
 Constraints :
 
@@ -176,9 +173,9 @@ A constraint is just a set of 4 doubles : a minimum width and maximum width, and
 
 Then the widget goes through its own list of children. One by one, the widget tells its children what their constraints are (which can be different for each child), and then asks each child what size it wants to be.
 
-![Alt text](<day11(1).png>)
+![day11(1)](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/1a75c01a-a1b7-497a-be41-b87078df2c43)
 
-![Alt text](<day11(2).png>)
+![day11(2)](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/61a84cf9-4458-45be-b6d6-47655aae51cb)
 
 Day 12 : List View Builder, List Generate, Card & Asserts
 
@@ -192,7 +189,7 @@ final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
 
 Cards : Cards in flutter provides a Material design with various properties to play with and customize your widget such as elevation, border radius, child widget, and many more.
 
-![Alt text](day12.png)
+![day12](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/0eb4ca95-320d-4004-ad51-44504430ba61)
 
 Day 13 : Local Files | Load & Decode JSON
 
@@ -219,6 +216,6 @@ class _HomePageState extends State<HomePage> {
   }
 ```
 
-![Alt text](day13.png)
+![day13](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/844baf6f-f4ed-4f97-8eae-1cbd20341351)
 
 Day 14 : Q/A #30DaysOfFlutter
