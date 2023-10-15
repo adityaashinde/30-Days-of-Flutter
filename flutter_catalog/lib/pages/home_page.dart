@@ -13,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isLoading = true;
+
   @override
   void initState() {
     super.initState();
@@ -27,7 +29,9 @@ class _HomePageState extends State<HomePage> {
         .map<Item>((item) => Item.fromMap(item))
         .toList();
 
-    setState(() {});
+    setState(() {
+      isLoading = false; // Data is loaded, set isLoading false
+    });
   }
 
   @override
@@ -36,17 +40,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Catalog App"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: CatalogModel.items[index],
-            );
-          },
-        ),
-      ),
+      body: isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) => ItemWidget(
+                  item: CatalogModel.items[index],
+                ),
+              ),
+            ),
       drawer: const MyDrawer(),
     );
   }
