@@ -50,24 +50,25 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   final item = CatalogModel.items[index];
                   return Card(
-                      clipBehavior: Clip.antiAlias,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: GridTile(
-                        header: Container(
-                          // ignore: sort_child_properties_last
-                          child: Text(item.name),
-                          padding: const EdgeInsets.all(12),
-                          decoration: const BoxDecoration(
-                            color: Colors.deepPurple,
-                          ),
-                        ),
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                      header: Container(
                         // ignore: sort_child_properties_last
-                        child: Image.network(item.image),
-                        footer: Text(
-                          item.price.toString(),
+                        child: Text(item.name),
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Colors.deepPurple,
                         ),
-                      ));
+                      ),
+                      // ignore: sort_child_properties_last
+                      child: Image.network(item.image),
+                      footer: Text(
+                        item.price.toString(),
+                      ),
+                    ),
+                  );
                 },
                 itemCount: CatalogModel.items.length,
               )
