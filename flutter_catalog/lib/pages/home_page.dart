@@ -2,7 +2,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+<<<<<<< Updated upstream
 import 'package:flutter_catalog/widgets/drawer.dart';
+=======
+import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
+import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
+import 'package:flutter_catalog/widgets/theme.dart';
+import 'package:velocity_x/velocity_x.dart';
+>>>>>>> Stashed changes
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,6 +41,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< Updated upstream
       appBar: AppBar(
         title: const Text("Catalog App"),
       ),
@@ -80,5 +88,24 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: const MyDrawer(),
     );
+=======
+        backgroundColor: MyTheme.creamColor,
+        body: SafeArea(
+          child: Container(
+            padding: Vx.m32,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const CatalogHeader(),
+                // ignore: unnecessary_null_comparison
+                if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                  const CatalogList().py16().expand()
+                else
+                  const CircularProgressIndicator().centered().expand(),
+              ],
+            ),
+          ),
+        ));
+>>>>>>> Stashed changes
   }
 }
