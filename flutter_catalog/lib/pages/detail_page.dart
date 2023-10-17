@@ -47,7 +47,7 @@ class DetailPage extends StatelessWidget {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    catalog.name.text.xl2
+                    catalog.name.text.xl
                         .color(MyTheme.darkBluishColor)
                         .bold
                         .make(),
