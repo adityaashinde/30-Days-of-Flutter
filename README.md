@@ -3,6 +3,7 @@
 Day 01 :
 Flutter Installation and Setup
 First App : 
+
 ![hello-app](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/84e66e8c-aeb5-4893-a2cc-7ad774b162da)
 
 Day 02 :
@@ -218,4 +219,185 @@ class _HomePageState extends State<HomePage> {
 
 ![day13](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/844baf6f-f4ed-4f97-8eae-1cbd20341351)
 
+
 Day 14 : Q/A #30DaysOfFlutter
+
+
+Day 15 : JSON Mapping | Data Class Generator | Progress Indicator
+
+*JSON Mapping* - Using the form `Json`() method, we pass the JSON string and the target class to map the JSON string to a person object.
+
+```dart
+@override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    var decodedData = jsonDecode(catalogJson);
+    var productsData = decodedData["products"];
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+```
+
+![day15](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/20edd71a-a2c8-4f28-92b1-d9ea7034c85c)
+
+
+*Data Class Generator* - In VS Code extension setting add the Dart Data Class Generator extension. 
+
+after that Hit CTRL + P to open the command dialog.
+
+Search the Dart data class generator : Generate from class file and click OK
+
+*Progress Indicator* -  Go to the dart file and locate the widget inside which you like to add the progress indicator.
+
+Add the Circular Progress Indicator() widget.
+
+Inside the Circular Progress Indicator() widget, add parameter, and provide the value between 0 to 1.
+
+![day15 1](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/a8f0bb31-10f1-45c5-86ce-11f0014a3db0)
+
+
+Day 16 - Grid View | Grid Tile
+
+*Grid View -* 
+
+Grid View is a widget in flutter that displays the items in a 2-D array (two-dimensional rows and columns).
+
+A type of Adapter View that displays items in a two-dimensional scrolling grid.
+
+Grid View is a control used to display data in tables on a web page.
+
+*Grid Tile -*
+
+A tile in a Material Design grid list. A grid list is a Grid View of tiles in a vertical and horizontal array.
+
+Each tile typically contains some visually rich content (e.g. an image) together with a Grid Tile Bar in wither a header or footer.
+
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Catalog App"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        // ignore: unnecessary_null_comparison
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                ),
+                itemBuilder: (context, index) {
+                  final item = CatalogModel.items[index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                      header: Container(
+                        // ignore: sort_child_properties_last
+                        child: Text(item.name),
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      // ignore: sort_child_properties_last
+                      child: Image.network(item.image),
+                      footer: Text(
+                        item.price.toString(),
+                      ),  
+                    ),  // GridTile
+                  );    // Card
+                },
+                itemCount: CatalogModel.items.length,
+              )   // GridView.builder
+      ),
+    );
+  }
+```
+
+![day16](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/a12a4cc4-67f5-41d7-aa18-f7fa074fa8bb)
+
+
+Day 17 - Beautiful UI | Velocity X
+
+Velocity X latest version :   `velocity_x: ^4.1.1`
+
+Velocity X is a flutter library that provides a set of customizable and extensible animations that can be used to enhance.
+
+Velocity X is a 100% free Flutter open-source minimalist UI Framework built with flutter SDK to make Flutter development easier and more joyful than ever.
+
+🚀 Just used `VelocityX` to craft a stunning UI for my Flutter app! 💫✨ Loving how easy and efficient it is to create beautiful designs. 
+
+#Flutter #UI #VelocityX #FlutterDev 🎨📲
+
+![day17 1](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/16845fb8-faaa-4a87-9f3b-6d4c625358bf)
+
+
+![day17 2](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/fca59090-940c-4dec-a5a7-77e234322648)
+
+
+Day 18 - Hero Animation | Material Page Route | Arc
+
+*Hero Animation :* 
+
+Flying an image from one screen to another is called a hero animation in flutter, through the same motion is sometimes referred to as a shared element transition.
+
+The hero animation is a powerful built-in animation to convey an action by automatically animating a widget from one page to another to the correct size and position.
+
+when you navigate back to the previous page, the Hero animates back to the original position.
+
+*Initial Route :*
+
+The `initialRoute` property defines which route the app should start with.
+
+The routes property defines the available named routes and the widgets to build when navigating to those routes.
+
+When using `initialRoutes` , don’t defines a home property.
+
+*Material Page Route :*
+
+A model route that replaces the entire screen with a platform-adaptive transition.
+
+For Android, the entrance transition for the page zooms in and fades in while the exiting page zooms out and fades out. The exit transition is similar, but in reverse.
+
+For iOS, the page slides in from the right and exits in reverse. The page also shifts to the left in parallax when another page enters to cover it. (These directions are flipped in environments with a right-to-left reading direction.)
+
+By default, when a modal route is replaced by another, the previous route remains in memory. To free all the resources when this is not necessary, set `maintainState` to false.
+
+The `fullscreenDialog` property specifies whether the incoming route is a full screen modal dialog. On iOS, those routes animate from the bottom to the top rather than horizontally.
+
+The type `T` specifies the return type of the route which can be supplied as the route is popped from the stack via `Navigator.pop` by providing the optional `result` argument.
+
+Inheritance
+• Object >
+• Route<T> >
+• OverlayRoute<T> >
+• TransitionRoute<T> >
+• ModalRoute<T> >
+• PageRoute<T> >
+• MaterialPageRoute
+
+Mixed in types
+• MaterialRouteTransitionMixin<T>
+
+**Constructors**
+
+```kotlin
+**MaterialPageRoute**({required WidgetBuilder builder, RouteSettings? settings, 
+bool maintainState = true, bool fullscreenDialog = false, bool allowSnapshotting = true})
+```
+
+Construct a `MaterialPageRoute` whose contents are defined by builder.
+
+![day18 1](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/68b514b9-ca71-4e60-b87d-38a8b7e65343)
+
+![day18 2](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/95772051-1150-48fc-8c8b-daa131ff32e5)
+![day18 3](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/44624947-ba53-4ed8-a7e3-bb783732ebcb)
