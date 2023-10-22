@@ -180,9 +180,11 @@ Then the widget goes through its own list of children. One by one, the widget te
 
 Day 12 : List View Builder, List Generate, Card & Asserts
 
-List View builder : List View builder is for when you have a large set of items because it doesn’t build of them at once, and only builds the ones that are visible or are going to be visible.
+List View builder : 
+List View builder is for when you have a large set of items because it doesn’t build of them at once, and only builds the ones that are visible or are going to be visible.
 
-List Generate : Generates a list of values. Creates a list with length positions and files it with values created by calling generator for each index in the range 0 … length -1 in increasing order.
+List Generate : 
+Generates a list of values. Creates a list with length positions and files it with values created by calling generator for each index in the range 0 … length -1 in increasing order.
 
 ```dart
 final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
@@ -225,7 +227,8 @@ Day 14 : Q/A #30DaysOfFlutter
 
 Day 15 : JSON Mapping | Data Class Generator | Progress Indicator
 
-*JSON Mapping* - Using the form `Json`() method, we pass the JSON string and the target class to map the JSON string to a person object.
+*JSON Mapping* - 
+Using the form `Json`() method, we pass the JSON string and the target class to map the JSON string to a person object.
 
 ```dart
 @override
@@ -246,13 +249,15 @@ Day 15 : JSON Mapping | Data Class Generator | Progress Indicator
 ![day15](https://github.com/adityaashinde/30-Days-of-Flutter/assets/94387380/20edd71a-a2c8-4f28-92b1-d9ea7034c85c)
 
 
-*Data Class Generator* - In VS Code extension setting add the Dart Data Class Generator extension. 
+*Data Class Generator* - 
+In VS Code extension setting add the Dart Data Class Generator extension. 
 
 after that Hit CTRL + P to open the command dialog.
 
 Search the Dart data class generator : Generate from class file and click OK
 
-*Progress Indicator* -  Go to the dart file and locate the widget inside which you like to add the progress indicator.
+*Progress Indicator* -  
+Go to the dart file and locate the widget inside which you like to add the progress indicator.
 
 Add the Circular Progress Indicator() widget.
 
